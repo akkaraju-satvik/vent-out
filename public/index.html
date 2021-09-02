@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Vent-out! 🤬</title>
+</head>
+<body>
+    <h1>Vent-out! 🤬</h1>
+    <form id="vent-out-form">
+        <textarea name="venter" id="vent-out-input" cols="80" rows="5"></textarea>
+        <button type="submit" id="vent">Submit</button>
+    </form>
+    
+    <div id="vents"></div>
+
+    <script id="vent-template" type="text/html">
+        <div>
+            <p id="ventdata">{{data}}</p>
+            <hr/>
+        </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html> 
