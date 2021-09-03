@@ -20,7 +20,7 @@ io.on('connection', async (socket) => {
     console.log('New connection established')
 
     const data = await Vent.find({})
-    data.forEach(item => io.emit('vent', item.data))
+    data.forEach(item => socket.emit('vent', item.data))
     socket.on('ventSubmitted', async function(data, callback) {
 
         const vent = new Vent({
