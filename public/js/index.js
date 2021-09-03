@@ -6,9 +6,10 @@ const ventOutForm = document.querySelector('#vent-out-form')
 const ventTemplate = document.querySelector('#vent-template').innerHTML
 const vents = document.querySelector('#vents')
 
+$('textarea').autoResize()
 socket.on('vent', function(data) {
     const html = Mustache.render(ventTemplate, {data})
-    vents.insertAdjacentHTML('beforeend', html)
+    vents.insertAdjacentHTML('afterbegin', html)
 })
 
 ventOutForm.addEventListener('submit', (e) => {
@@ -16,10 +17,12 @@ ventOutForm.addEventListener('submit', (e) => {
 
     submitVent.setAttribute('disabled', 'disabled')
     ventedOutData.innerHTML.replace('\n', '<br/>')
-    socket.emit('ventSubmitted', ventedOutData.value, (data) => {
+    const data = {
+        data: ventedOutData.value
+    }
+    socket.emit('ventSubmitted', data, (data) => {
         submitVent.removeAttribute('disabled')
         ventedOutData.value = ''
         ventedOutData.focus()
-        console.log(data)
     })
 })
