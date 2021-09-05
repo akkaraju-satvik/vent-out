@@ -8,6 +8,7 @@ const vents = document.querySelector('#vents')
 
 $('textarea').autoResize()
 socket.on('vent', function(data) {
+    if(data === '') return vents.innerHTML = ''
     const html = Mustache.render(ventTemplate, {data})
     vents.insertAdjacentHTML('afterbegin', html)
 })

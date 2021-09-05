@@ -18,7 +18,7 @@ app.use(ventRoutes)
 
 io.on('connection', async (socket) => {
     console.log('New connection established')
-
+    socket.emit('vent', '')
     const data = await Vent.find({})
     data.forEach(item => socket.emit('vent', item.data))
     socket.on('ventSubmitted', async function(data, callback) {

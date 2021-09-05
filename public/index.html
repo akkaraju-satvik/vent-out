@@ -13,14 +13,14 @@
 <body>
     <h1>Vent-out! 🤬</h1>
     <form id="vent-out-form">
-        <textarea name="venter" spellcheck="false" id="vent-out-input" cols="80" rows="5"></textarea>
+        <textarea name="venter" placeholder="Vent out here.." spellcheck="false" id="vent-out-input" cols="80" rows="5"></textarea>
         <button type="submit" id="vent">Submit</button>
     </form>
     
     <div id="vents"></div>
 
     <script id="vent-template" type="text/html">
-        <div>
+        <div class="vent__container">
             <p id="ventdata">{{data}}</p>
             <hr/>
         </div>
