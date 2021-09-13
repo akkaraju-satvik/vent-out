@@ -28,7 +28,7 @@ io.on('connection', async (socket) => {
         })
         await vent.save()
         io.emit('vent', vent.data)
-        callback(vent.data)
+        callback( vent.data )
     })
 })
 
