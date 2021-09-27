@@ -15,7 +15,7 @@ socket.on('vent', function(data) {
 
 ventOutForm.addEventListener('submit', (e) => {
     e.preventDefault()
-
+    if(ventedOutData === '') return
     submitVent.setAttribute('disabled', 'disabled')
     ventedOutData.innerHTML.replace('\n', '<br/>')
     const data = {

@@ -22,7 +22,7 @@ io.on('connection', async (socket) => {
     const data = await Vent.find({})
     data.forEach(item => socket.emit('vent', item.data))
     socket.on('ventSubmitted', async function(data, callback) {
-
+        if(data.data === '') return callback('')
         const vent = new Vent({
             data: data.data
         })
