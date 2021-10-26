@@ -35,3 +35,35 @@ textarea {
 .vent__container {
     width: 40vw;
 }
+
+@media (min-width: 320px) {
+    textarea {
+        width: 90vw;
+    }
+    .vent__container {
+        width: 90vw;
+    }
+}
+
+@media (min-width: 768px) {
+    .vent__container {
+        width: 75vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .vent__container {
+        width: 60vw;
+    }
+    textarea {
+        width: 60vw;
+    }
+}
+@media (min-width: 1024px) {
+    .vent__container {
+        width: 50vw;
+    }
+    textarea {
+        width: 40vw;
+    }
+}
